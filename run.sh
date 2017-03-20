@@ -78,5 +78,7 @@ if [ -e "provision-post.sh" ]; then
     bash provision-post.sh
 fi
 
+wp plugin install show-current-template admin-bar-id-menu simply-show-ids duplicate-post wordpress-importer --activate
+
 open http://127.0.0.1:$PORT
 bin/wp server --host=0.0.0.0 --port=$PORT --docroot=$WP_PATH
