@@ -80,5 +80,8 @@ fi
 
 wp plugin install show-current-template admin-bar-id-menu simply-show-ids duplicate-post wordpress-importer --activate
 
+wget https://raw.githubusercontent.com/jawordpressorg/theme-test-data-ja/master/wordpress-theme-test-date-ja.xml
+wp import --authors=create wordpress-theme-test-date-ja.xml
+
 open http://127.0.0.1:$PORT
 bin/wp server --host=0.0.0.0 --port=$PORT --docroot=$WP_PATH
