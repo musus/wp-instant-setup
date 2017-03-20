@@ -19,9 +19,9 @@ if [ -e "$WP_PATH/wp-config.php" ]; then
 fi
 
 if ! bin/wp --info ; then
-    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar
+    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
     rm -fr bin && mkdir bin
-    mv wp-cli-nightly.phar bin/wp
+    mv wp-cli.phar bin/wp
     chmod 755 bin/wp
 fi
 
