@@ -35,7 +35,7 @@ else
     echo "CREATE DATABASE $DB_NAME DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;" | mysql -u$DB_USER
 fi
 
-bin/wp core download --path=$WP_PATH --locale=en_US --force
+bin/wp core download --path=$WP_PATH --locale=ja --force
 
 if [ $DB_PASS ]; then
 bin/wp core config \
@@ -44,7 +44,7 @@ bin/wp core config \
 --dbuser="$DB_USER" \
 --dbpass="$DB_PASS" \
 --dbprefix=wp_ \
---locale=en_US \
+--locale=ja \
 --extra-php <<PHP
 define( 'JETPACK_DEV_DEBUG', true );
 define( 'WP_DEBUG', true );
@@ -55,7 +55,7 @@ bin/wp core config \
 --dbname=$DB_NAME \
 --dbuser=$DB_USER \
 --dbprefix=wp_ \
---locale=en_US \
+--locale=ja \
 --extra-php <<PHP
 define( 'JETPACK_DEV_DEBUG', true );
 define( 'WP_DEBUG', true );
