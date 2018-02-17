@@ -78,7 +78,7 @@ if [ -e "provision-post.sh" ]; then
     bash provision-post.sh
 fi
 
-wp plugin install show-current-template admin-bar-id-menu simply-show-ids duplicate-post wordpress-importer --activate
+wp plugin install show-current-template admin-bar-id-menu simply-show-ids duplicate-post wordpress-importer mailcatcher --activate
 
 wget https://raw.githubusercontent.com/jawordpressorg/theme-test-data-ja/master/wordpress-theme-test-date-ja.xml
 wp import --authors=create wordpress-theme-test-date-ja.xml
