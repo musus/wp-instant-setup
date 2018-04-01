@@ -11,6 +11,7 @@ PORT=8080
 WP_PATH=$(pwd)/www
 WP_TITLE='Welcome to the WordPress'
 WP_DESC='Hello World!'
+WP_XML=$(pwd)/import.xml
 
 if [ -e "$WP_PATH/wp-config.php" ]; then
     open http://127.0.0.1:$PORT
@@ -84,7 +85,7 @@ wp plugin install show-current-template admin-bar-id-menu simply-show-ids duplic
 wp plugin activate wp-multibyte-patch
 wp plugin delete akismet hello
 
-if [ "$WP_PATH/import.xml" ]; then
+if [ -f ${WP_XML} ]; then
     wp import --authors=create import.xml
 else
     wget https://raw.githubusercontent.com/jawordpressorg/theme-test-data-ja/master/wordpress-theme-test-date-ja.xml
