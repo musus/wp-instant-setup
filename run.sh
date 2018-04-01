@@ -83,8 +83,13 @@ fi
 wp plugin install show-current-template admin-bar-id-menu simply-show-ids duplicate-post wordpress-importer mailcatcher --activate
 wp plugin activate wp-multibyte-patch
 wp plugin delete akismet hello
-wget https://raw.githubusercontent.com/jawordpressorg/theme-test-data-ja/master/wordpress-theme-test-date-ja.xml
-wp import --authors=create wordpress-theme-test-date-ja.xml
+
+if [ "$WP_PATH/import.xml" ]; then
+    wp import --authors=create import.xml
+else
+    wget https://raw.githubusercontent.com/jawordpressorg/theme-test-data-ja/master/wordpress-theme-test-date-ja.xml
+    wp import --authors=create wordpress-theme-test-date-ja.xml
+fi
 
 open http://127.0.0.1:$PORT
 wp server --host=0.0.0.0 --port=$PORT --docroot=$WP_PATH
