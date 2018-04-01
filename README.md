@@ -46,19 +46,6 @@ $ git clone git@github.com:miya0001/wp-instant-setup.git && cd wp-instant-setup
 $ ./run.sh
 ```
 
-### For MAMP users
-
-```
-$ mkdir ~/Desktop/wordpress && cd $_
-$ curl https://raw.githubusercontent.com/miya0001/wp-instant-setup/master/run.sh | bash -s root root
-```
-
-Or
-
-```
-$ git clone git@github.com:musus/wp-instant-setup.git && cd wp-instant-setup
-$ ./run.sh root root
-```
 
 ## Default Account
 
