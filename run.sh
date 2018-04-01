@@ -69,7 +69,7 @@ wp core install \
 --admin_password="admin" \
 --admin_email="admin@example.com"
 
-wp rewrite structure "/archives/%post_id%"
+wp rewrite structure "/%category%/%post_id%"
 
 wp option update blogname "$WP_TITLE"
 wp option update blogdescription "$WP_DESC"
