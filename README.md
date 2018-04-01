@@ -7,6 +7,7 @@ WordPress development environment with PHP built-in web server + WP-CLI.
 * OSX
 * php 5.4 or later
 * MySQL
+* wget
 
 ### Recommend
 
@@ -16,13 +17,13 @@ WordPress development environment with PHP built-in web server + WP-CLI.
 ## Uage
 
 ```
-$ curl https://.../run.sh | bash -s <db-user> <db-pass> <db-name>
+$ curl https://.../run.sh | bash -s <db-name>
 ```
 
 or
 
 ```
-$ ./run.sh <db-user> <db-pass> <db-name>
+$ ./run.sh <db-name>
 ```
 
 ### Defaults
@@ -55,7 +56,7 @@ $ curl https://raw.githubusercontent.com/miya0001/wp-instant-setup/master/run.sh
 Or
 
 ```
-$ git clone git@github.com:miya0001/wp-instant-setup.git && cd wp-instant-setup
+$ git clone git@github.com:musus/wp-instant-setup.git && cd wp-instant-setup
 $ ./run.sh root root
 ```
 
@@ -66,10 +67,6 @@ $ ./run.sh root root
 
 ## Advanced Tips
 
-Add alias into your `~/.bash_profile` like following.
-
-```
-alias wpserve="curl https://raw.githubusercontent.com/miya0001/wp-instant-setup/master/run.sh | bash -s <db-user> <db-pass>"
 ```
 
 Then just run:
