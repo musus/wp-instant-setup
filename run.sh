@@ -48,6 +48,7 @@ wp core config \
 --extra-php <<PHP
 define( 'JETPACK_DEV_DEBUG', true );
 define( 'WP_DEBUG', true );
+define( 'WP_MAILCATCHER', true );
 PHP
 else
 wp core config \
@@ -59,6 +60,7 @@ wp core config \
 --extra-php <<PHP
 define( 'JETPACK_DEV_DEBUG', true );
 define( 'WP_DEBUG', true );
+define( 'WP_MAILCATCHER', true );
 PHP
 fi
 
