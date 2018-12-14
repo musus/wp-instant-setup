@@ -37,7 +37,7 @@ else
     echo "CREATE DATABASE $DB_NAME DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;" | mysql -u$DB_USER
 fi
 
-wp core download --path=$WP_PATH --locale=ja --force
+wp core download --path=$WP_PATH --locale=ja
 
 if [ $DB_PASS ]; then
 wp core config \
@@ -50,7 +50,6 @@ wp core config \
 --extra-php <<PHP
 define( 'JETPACK_DEV_DEBUG', true );
 define( 'WP_DEBUG', true );
-define( 'WP_MAILCATCHER', true );
 PHP
 else
 wp core config \
@@ -62,7 +61,6 @@ wp core config \
 --extra-php <<PHP
 define( 'JETPACK_DEV_DEBUG', true );
 define( 'WP_DEBUG', true );
-define( 'WP_MAILCATCHER', true );
 PHP
 fi
 
@@ -82,9 +80,7 @@ if [ -e "provision-post.sh" ]; then
     bash provision-post.sh
 fi
 
-wp plugin install show-current-template admin-bar-id-menu simply-show-ids duplicate-post wordpress-importer mailcatcher --activate
-wp plugin activate wp-multibyte-patch
-wp plugin delete akismet hello
+wp plugin install show-current-template admin-bar-id-menu simply-show-ids duplicate-post --activate
 
 if [ -f ${WP_XML} ]; then
     wp import --authors=create import.xml
