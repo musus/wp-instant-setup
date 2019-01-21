@@ -4,6 +4,7 @@ set -ex;
 
 mysql.server start
 
+
 DB_USER="root"
 DB_PASS=""
 PJ_NAME=${1-wpdev}
@@ -76,18 +77,10 @@ wp rewrite structure "/%category%/%post_id%"
 wp option update blogname "$WP_TITLE"
 wp option update blogdescription "$WP_DESC"
 
-if [ -e "provision-post.sh" ]; then
-    bash provision-post.sh
-fi
 
 wp plugin install show-current-template admin-bar-id-menu simply-show-ids duplicate-post --activate
 
-if [ -f ${WP_XML} ]; then
-    wp import --authors=create import.xml
-else
-    wget https://raw.githubusercontent.com/jawordpressorg/theme-test-data-ja/master/wordpress-theme-test-date-ja.xml
-    wp import --authors=create wordpress-theme-test-date-ja.xml
-fi
+# wget https://raw.githubusercontent.com/jawordpressorg/theme-test-data-ja/master/wordpress-theme-test-date-ja.xml
 
 open http://127.0.0.1:$PORT
 wp server --host=0.0.0.0 --port=$PORT --docroot=$WP_PATH
