@@ -78,7 +78,7 @@ wp option update blogname "$WP_TITLE"
 wp option update blogdescription "$WP_DESC"
 
 
-wp plugin install show-current-template admin-bar-id-menu simply-show-ids duplicate-post --activate
+wp plugin install show-current-template admin-bar-id-menu simply-show-ids --activate
 
 # wget https://raw.githubusercontent.com/jawordpressorg/theme-test-data-ja/master/wordpress-theme-test-date-ja.xml
 
